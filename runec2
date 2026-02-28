@@ -1,0 +1,31 @@
+import boto3
+
+# ec2 = boto3.resource('ec2', region_name='us-east-1')
+#
+# instances = ec2.create_instances(
+#     ImageId='ami-0532be01f26a3de55',
+#     MinCount=1,
+#     MaxCount=1,
+#     InstanceType='t3.micro',
+#     KeyName='my-key-pair',
+#     # SecurityGroupIds=['sg-12345678'],
+#     # SubnetId='subnet-12345678',
+#     # TagSpecifications=[
+#     #     {
+#     #         'ResourceType': 'instance',
+#     #         'Tags': [
+#     #             {'Key': 'Name', 'Value': 'WebServer'},
+#     #             {'Key': 'Environment', 'Value': 'Prod'}
+#     #         ]
+#     #     }
+#     # ],
+#     IamInstanceProfile={'Name': 'EC2-SSM-Role'}
+# )
+client = boto3.client('ec2')
+response = client.run_instances(
+     ImageId='ami-0532be01f26a3de55',
+     InstanceType='t3.micro',
+     MinCount=1,
+     MaxCount=1,
+)
+print(f"Launched instance: {instances[0].id}")
