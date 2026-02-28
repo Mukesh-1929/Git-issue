@@ -29,4 +29,3 @@ response = client.run_instances(
      MaxCount=2,
 )
 print(f"Launched instance: {instances[0].id}")
-print("testing new codes : offshore")
