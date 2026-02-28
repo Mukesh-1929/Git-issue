@@ -26,6 +26,6 @@ response = client.run_instances(
      ImageId='ami-0532be01f26a3de55',
      InstanceType='t3.micro',
      MinCount=1,
-     MaxCount=1,
+     MaxCount=2,
 )
 print(f"Launched instance: {instances[0].id}")
